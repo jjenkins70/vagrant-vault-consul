@@ -4,6 +4,8 @@ Vagrant.configure("2") do |config|
     v.vm.box = "ubuntu/trusty64"
     v.vm.hostname = "vault"
     v.vm.provision :shell, path: "bootstrap.sh"
+    v.vm.network :forwarded_port, guest: 8200, host: 8200
+    #v.vm.network "private_network", type: "dhcp"
   end
 #Consul Server
   config.vm.define "consul" do |c|
