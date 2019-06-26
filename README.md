@@ -1,4 +1,6 @@
 #Vagrant-vault-consul repo
+# Directories
+- v2 directory follows the inital learn path - and ends with having consol in dev mode as storage on your vault server.
 
 #Background
 These scripts were put together while I was reviewing https://learn.hashicorp.com/vault/
