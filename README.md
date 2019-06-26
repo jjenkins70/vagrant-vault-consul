@@ -23,14 +23,23 @@ you can now use UI from your machine.  or you can vault login root from another 
 
 - vault server -dev -config=/vagrant/vault.hcl -dev-root-token-id='root'  
 
+- run "/vagrant/set-env.sh" to set the VAULT_ADDR variable.  - be sure to update IP variable to your local machine / vm
+
+
 #Using Consul
-- When you are ready to use consul - (ie not store things in memory anymore) uncomment the consul section in vault.hcl and run
+- When you are ready to use consul - (ie not store things in memory anymore) uncomment the consul section in vault.hcl and run consul agent -dev
+then
 - vault server -config=/vagrant/vault.hcl
+
+you can then run the /vagrant/unseal.sh scripts - first you have to set your environment though
 
 # Neat (to me) CLI hacks
 - When you initially unseal 'vault operator init > key.txt'
 - then to unseal 'vault operator unseal $(grep 'Key 1:' key.txt | awk '{print $NF}') 
 - - repeat for keys 2, 3.
+
+#Commands to always remember
+- vault -autocomplete-install ; exec $SHELL
 
 
 
