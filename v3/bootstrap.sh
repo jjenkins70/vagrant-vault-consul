@@ -21,7 +21,7 @@ sudo setcap cap_ipc_lock=+ep /usr/local/bin/vault
 sudo useradd --system --home /etc/vault.d --shell /bin/false vault
 
 # Create vault configuration file
-sudo touch /etc/syustemd/system/vault.service
+sudo touch /etc/systemd/system/vault.service
 sudo cat << EOF > /etc/systemd/system/vault.service
 
 [Unit]
