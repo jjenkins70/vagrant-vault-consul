@@ -1,5 +1,5 @@
 #Variables
-CONSUL_VERSION=1.5.0
+CONSUL_VERSION=1.5.2
 
 #install and update
 sudo apt-get update -y
