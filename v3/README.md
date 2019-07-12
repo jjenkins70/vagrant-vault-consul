@@ -20,9 +20,18 @@ vault server -config=/vagrant/vault.hcl
 - different tab ssh into vault
 - update vault.hcl cluster_addr with your machines ip
 - update /vagrant/consul.json bind_addr & retry_join (consul server) ips
+
 - start consul agent on the vault server (sudo consul agent -config-file=/vagrant/consul.json)
+
 - start vault server (sudo vault server -config=/vagrant/vault.hcl)
-- set environment variables (/vagrant/set-env) - update IP first, lol
+
+- set environment variables (/vagrant/set-env) - update IP first :)
+
+- run /vagrant/unseal.sh (check to see that all lines are uncommented)
+	- or manually:
+	vault operator init
+	vault operator unseal <keys>
+
 - init and unseal vault
 
 # Testing your work

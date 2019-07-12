@@ -1,0 +1,12 @@
+{
+"server": false,
+"datacenter": "dc1",
+"node_name": "con2",
+"data_dir": "/opt/consul",
+"bind_addr": "192.168.7.72",
+"client_addr": "127.0.0.1",
+"retry_join": ["192.168.7.80", "192.168.7.82", "192.168.7.83"],
+"encrypt": "MhEPM8BIJ2pul2Et2VTAQg==",
+"log_level": "DEBUG",
+"acl_enforce_version_8": false
+}
