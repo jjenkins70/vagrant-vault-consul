@@ -69,12 +69,4 @@ consul -autocomplete-install
 complete -C /usr/local/bin/consul consul 
 exec $SHELL
 
-nseal Key 1: rkTUctupN3FZH4jaG0sV8RL+51twd35eBKm2tlMoRom0
-Unseal Key 2: DtSZ26pU1in+WVi80khJIXX9AsCMtARFgPyIsgqvjlFk
-Unseal Key 3: F72PwW93jFCzFdrbybm9YFzDr40gnKdTp9EMIgbMrq80
-Unseal Key 4: 2gpLLcFPI26LiqEvsm2jshTFutKUIt7MgHD+HHl30H+D
-Unseal Key 5: 2vGegZ2zbTOhe2tuzJpUa/W6h1SbVGd1HDUkO6VNLMNM
-
-Initial Root Token: s.u7bNtuBUrWkaC5sbIKrOkozY
-
 
