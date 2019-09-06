@@ -25,33 +25,36 @@ bootstrap_c.sh 		- used for testing new releases / beta releases
 Consul has been setup following https://learn.hashicorp.com/consul/datacenter-deploy/deployment-guide
 - the bootstrap_consul.sh file is built based on the learn pages, however some permissions are opened up to work with vault
 
-manually update /etc/consul.d/server.hcl node_name = "cs[$num]"
 
+# Consul Setup
+- here we will walk through setting up Consul.
+- open multiple ssh tabs and vagrant ssh to your consul servers `vagrant ssh consul`
 
+- manually update /etc/consul.d/server.hcl node_name = "cs[$num]"
+`sudo consul agent -server -config-dir=/etc/consul.d -bind=`
+
+- find out what your IP address for the local server is (see above if you didn't modify the script)
 `sudo consul agent -server -config-dir=/etc/consul.d -bind={$IP}`
-
 
 # Vault Info
 vault server -config=/vagrant/vault.hcl
 
-# Setting up
-- here we will walk through setting up Vault and Consul.
-- Start with Consul Server `vagrant ssh consul`
-
-- find out what your IP address for the local server is.  Then run "sudo consul agent -server -config-dir=/etc/consul.d -bind=$IP"
+# Vault Setup
+- here we will walk through setting up Vault.
+- Start with Consul Server `vagrant ssh vault`  -- I like to open 4 ssh tabs, 1 for consul and vault for each server.
 
 - different tab ssh into vault
-- update vault.hcl cluster_addr with your machines ip
+- update vault.hcl cluster_addr with your machines ip (only if you changed the defaults)
 
 - update /vagrant/consul_c1[2].json bind_addr & retry_join (consul server) ips  -- if you aren't using the IP's provided above
 
 - start consul agent on the vault server `sudo consul agent -config-file=/vagrant/consul_c1[2].json`
 
-
-- start vault server `sudo vault server -config=/home/vagrant/vault.hcl`
+- start vault server `sudo vault server -config=/home/vagrant/vault.hcl` (make sure IP's are correct)
 
 - set environment variables (/vagrant/set-env) - update IP first, lol
-- init and unseal vault
+
+- init and unseal vault (or you can use the script provided to do this automagically)
 
 - Then log into vault2 server.  unseal with the keys generated on vault1.
 

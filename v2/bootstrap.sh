@@ -2,8 +2,8 @@ sudo apt-get update -y
 sudo apt-get install unzip jq -y
 
 #variables:
-VAULT_VERSION=1.1.2
-CONSUL_VERSION=1.5.0
+VAULT_VERSION=1.2.2
+CONSUL_VERSION=1.5.3
 
 #install vault and consul
 echo "Downloading and Installing VAULT"

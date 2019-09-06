@@ -1,6 +1,6 @@
 #variables:
-VAULT_VERSION=1.1.3
-CONSUL_VERSION=1.5.2
+VAULT_VERSION=1.2.2
+CONSUL_VERSION=1.5.3
 
 #updates and installs
 sudo apt-get update -y

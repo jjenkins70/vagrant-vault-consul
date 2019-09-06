@@ -1,6 +1,6 @@
 #Vagrant-vault-consul repo
 # Directories
-- v2 directory follows the inital learn path - and ends with having consol in dev mode as storage on your vault server.
+- v2 directory follows the initial learn path - and ends with having consul in dev mode as storage on your vault server.
   worth noting - though I've included a vagrant consul server, one is not needed here.
 - v3 directory starts with learn.hashicorp.com/vault/day-one/ops-deployment-guide and will setup 1 vault server (with consul agent) and 1 consul server.
 
